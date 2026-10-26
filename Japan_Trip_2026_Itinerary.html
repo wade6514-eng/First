@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🇯🇵 大阪・京都 5天4夜自由行行程表</title>
+  
+  <!-- Google Fonts: Zen Maru Gothic & Huninn fallback -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            paper: '#FFFCF6',
+            ink: '#3E3A39',
+            coral: '#F2A497',
+            yamabuki: '#F6D27A',
+            mizu: '#A8D3E6',
+            wakatake: '#B9DAA5',
+            accent: '#E86A58'
+          },
+          fontFamily: {
+            sans: ['Zen Maru Gothic', 'Huninn', 'sans-serif'],
+          },
+          borderWidth: {
+            '3': '3px',
+          },
+          boxShadow: {
+            'picturebook': '4px 4px 0px #3E3A39',
+            'picturebook-sm': '2px 2px 0px #3E3A39',
+            'picturebook-lg': '6px 6px 0px #3E3A39',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* 繪本風客製樣式 */
+    body {
+      background-color: #FFFCF6;
+      color: #3E3A39;
+      font-family: 'Zen Maru Gothic', 'Huninn', sans-serif;
+      background-image: radial-gradient(#3e3a3915 1px, transparent 0);
+      background-size: 24px 24px;
+    }
+
+    /* 手繪感覺外框 */
+    .border-hand-draw {
+      border: 3px solid #3E3A39;
+      border-radius: 20px;
+    }
+
+    /* 浮動微幅動畫 */
+    @keyframes floatGentle {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-6px) rotate(1.5deg); }
+    }
+
+    @keyframes bounceIn {
+      0% { transform: scale(0.96) translateY(8px); opacity: 0; }
+      70% { transform: scale(1.02) translateY(-2px); opacity: 1; }
+      100% { transform: scale(1) translateY(0); opacity: 1; }
+    }
+
+    .animate-float {
+      animation: floatGentle 4s ease-in-out infinite;
+    }
+
+    .animate-bounce-in {
+      animation: bounceIn 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    }
+
+    /* 支援減少動態效果設定 */
+    @media (prefers-reduced-motion: reduce) {
+      .animate-float, .animate-bounce-in {
+        animation: none !important;
+        transform: none !important;
+      }
+    }
+
+    /* 自訂捲軸 */
+    ::-webkit-scrollbar {
+      width: 10px;
+      height: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #FFFCF6;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #F6D27A;
+      border: 2px solid #3E3A39;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body class="min-h-screen pb-16 text-ink selection:bg-yamabuki selection:text-ink">
+
+  <!-- 頂端固定導覽列 -->
+  <nav class="sticky top-0 z-50 bg-paper/95 backdrop-blur border-b-3 border-ink px-4 py-3 shadow-sm">
+    <div class="max-w-4xl mx-auto flex justify-between items-center">
+      <a href="#hero" class="font-black text-lg md:text-xl flex items-center gap-2">
+        <span class="text-2xl">🇯🇵</span>
+        <span class="hidden sm:inline">關西繪本旅圖</span>
+        <span class="text-xs bg-yamabuki px-2 py-0.5 rounded-full border-2 border-ink">5D4N</span>
+      </a>
+      
+      <!-- 快捷選單 -->
+      <div class="flex gap-2 text-xs md:text-sm font-bold overflow-x-auto py-1">
+        <a href="#flights" class="px-2.5 py-1 bg-mizu hover:bg-mizu/80 rounded-xl border-2 border-ink transition">✈️ 航班</a>
+        <a href="#hotels" class="px-2.5 py-1 bg-wakatake hover:bg-wakatake/80 rounded-xl border-2 border-ink transition">🏨 住宿</a>
+        <a href="#itinerary" class="px-2.5 py-1 bg-coral hover:bg-coral/80 rounded-xl border-2 border-ink transition">🗓️ 行程</a>
+        <a href="#checklist" class="px-2.5 py-1 bg-yamabuki hover:bg-yamabuki/80 rounded-xl border-2 border-ink transition">✅ 清單</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-4xl mx-auto px-4 pt-6 space-y-10">
+
+    <!-- HERO 視覺 Banner & 倒數 -->
+    <section id="hero" class="relative bg-paper border-hand-draw shadow-picturebook p-6 md:p-8 overflow-hidden">
+      <!-- 裝飾用 SVG 繪本天際線背景 -->
+      <div class="absolute right-2 bottom-0 opacity-20 md:opacity-30 pointer-events-none select-none">
+        <svg width="280" height="180" viewBox="0 0 280 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- 鳥居 -->
+          <path d="M20 160V100M60 160V100M10 100H70M15 110H65" stroke="#3E3A39" stroke-width="4" stroke-linecap="round"/>
+          <!-- 富士山/遠山 -->
+          <path d="M80 160L140 80L200 160" stroke="#3E3A39" stroke-width="4" stroke-linejoin="round" fill="#A8D3E6" />
+          <!-- 城堡/塔 -->
+          <rect x="210" y="90" width="40" height="70" fill="#F6D27A" stroke="#3E3A39" stroke-width="4" />
+          <path d="M200 90L230 60L260 90Z" fill="#F2A497" stroke="#3E3A39" stroke-width="4" />
+        </svg>
+      </div>
+
+      <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="space-y-3 text-center md:text-left">
+          <div class="inline-flex items-center gap-2 bg-coral text-white text-xs md:text-sm font-bold px-3 py-1 rounded-full border-2 border-ink shadow-picturebook-sm">
+            <span>🍁 秋季日本自由行</span>
+          </div>
+          <h1 class="text-3xl md:text-4xl font-black tracking-wide text-ink">
+            大阪・京都 <br class="hidden sm:inline"/>5天4夜冒險繪本
+          </h1>
+          <p class="font-bold text-sm md:text-base text-ink/80 flex items-center justify-center md:justify-start gap-1">
+            <svg class="w-4 h-4 text-accent" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
+            2026/10/27（二）～ 10/31（六）
+          </p>
+        </div>
+
+        <!-- 倒數計時器卡片 -->
+        <div class="bg-yamabuki border-hand-draw p-4 text-center shadow-picturebook w-full md:w-auto animate-float">
+          <div class="text-xs font-black uppercase tracking-wider text-ink/80 mb-1">⏰ 距離出發倒數</div>
+          <div id="countdown" class="flex justify-center gap-2 text-ink font-black">
+            <div class="bg-paper px-3 py-1.5 rounded-xl border-2 border-ink min-w-[54px]">
+              <span id="cd-days" class="text-2xl block leading-none">00</span>
+              <span class="text-[10px] font-bold">天</span>
+            </div>
+            <div class="bg-paper px-3 py-1.5 rounded-xl border-2 border-ink min-w-[54px]">
+              <span id="cd-hours" class="text-2xl block leading-none">00</span>
+              <span class="text-[10px] font-bold">時</span>
+            </div>
+            <div class="bg-paper px-3 py-1.5 rounded-xl border-2 border-ink min-w-[54px]">
+              <span id="cd-mins" class="text-2xl block leading-none">00</span>
+              <span class="text-[10px] font-bold">分</span>
+            </div>
+            <div class="bg-paper px-3 py-1.5 rounded-xl border-2 border-ink min-w-[54px]">
+              <span id="cd-secs" class="text-2xl block leading-none">00</span>
+              <span class="text-[10px] font-bold">秒</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 航班資訊 -->
+    <section id="flights" class="space-y-4">
+      <div class="flex items-center gap-2">
+        <span class="text-2xl">✈️</span>
+        <h2 class="text-2xl font-black tracking-wide">航班資訊</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <!-- 去程卡片 -->
+        <div class="bg-mizu/40 border-hand-draw p-5 shadow-picturebook space-y-3 relative overflow-hidden">
+          <div class="flex justify-between items-start">
+            <span class="bg-mizu font-bold text-xs px-2.5 py-1 rounded-lg border-2 border-ink shadow-picturebook-sm">去程｜Peach MM024</span>
+            <span class="text-xs font-bold bg-paper px-2 py-0.5 rounded-md border border-ink">10/27（二）</span>
+          </div>
+          <div class="flex items-center justify-between my-2">
+            <div class="text-center">
+              <div class="text-2xl font-black">09:40</div>
+              <div class="text-xs font-bold text-ink/70">台灣 (TPE)</div>
+            </div>
+            <div class="flex flex-col items-center px-2">
+              <span class="text-xs font-bold text-ink/60">2h 30m</span>
+              <svg class="w-16 h-5 text-ink" viewBox="0 0 64 20" fill="none">
+                <path d="M2 10H58M58 10L50 4M58 10L50 16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="text-center">
+              <div class="text-2xl font-black">13:10</div>
+              <div class="text-xs font-bold text-ink/70">關西機場 (KIX)</div>
+            </div>
+          </div>
+          <p class="text-xs text-ink/80 bg-paper/80 p-2 rounded-xl border border-ink">
+            💡 預留 60～90 分鐘通關時間；入境領行李後前往 JR 站。
+          </p>
+        </div>
+
+        <!-- 回程卡片 -->
+        <div class="bg-coral/40 border-hand-draw p-5 shadow-picturebook space-y-3 relative overflow-hidden">
+          <div class="flex justify-between items-start">
+            <span class="bg-coral font-bold text-xs px-2.5 py-1 rounded-lg border-2 border-ink shadow-picturebook-sm">回程｜Peach MM027</span>
+            <span class="text-xs font-bold bg-paper px-2 py-0.5 rounded-md border border-ink">10/31（六）</span>
+          </div>
+          <div class="flex items-center justify-between my-2">
+            <div class="text-center">
+              <div class="text-2xl font-black">15:25</div>
+              <div class="text-xs font-bold text-ink/70">關西機場 T2</div>
+            </div>
+            <div class="flex flex-col items-center px-2">
+              <span class="text-xs font-bold text-ink/60">3h 30m</span>
+              <svg class="w-16 h-5 text-ink" viewBox="0 0 64 20" fill="none">
+                <path d="M2 10H58M58 10L50 4M58 10L50 16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="text-center">
+              <div class="text-2xl font-black">17:55</div>
+              <div class="text-xs font-bold text-ink/70">台灣 (TPE)</div>
+            </div>
+          </div>
+          <p class="text-xs text-ink/80 bg-paper/80 p-2 rounded-xl border border-ink">
+            💡 樂桃於關西機場第 2 航廈 (T2) 辦理報到，需搭免費接駁巴士。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 住宿安排 -->
+    <section id="hotels" class="space-y-4">
+      <div class="flex items-center gap-2">
+        <span class="text-2xl">🏨</span>
+        <h2 class="text-2xl font-black tracking-wide">住宿安排</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <!-- 住宿 1 -->
+        <div class="bg-paper border-hand-draw p-4 shadow-picturebook flex flex-col justify-between space-y-2">
+          <div>
+            <span class="text-xs font-bold bg-yamabuki px-2 py-0.5 rounded-md border border-ink">10/27～10/29 (2晚)</span>
+            <h3 class="font-black text-lg mt-2 text-ink">Ocean Nishikujo</h3>
+            <p class="text-xs text-ink/70 font-bold">📍 西九條站周邊</p>
+          </div>
+          <p class="text-xs bg-wakatake/30 p-2 rounded-lg border border-ink/40">
+            🎢 近 USJ 日本環球影城，直達交通便利，早起玩影城最佳選擇。
+          </p>
+        </div>
+
+        <!-- 住宿 2 -->
+        <div class="bg-paper border-hand-draw p-4 shadow-picturebook flex flex-col justify-between space-y-2">
+          <div>
+            <span class="text-xs font-bold bg-mizu px-2 py-0.5 rounded-md border border-ink">10/29～10/30 (1晚)</span>
+            <h3 class="font-black text-lg mt-2 text-ink">Rakuten STAY URBAN 四条河原町</h3>
+            <p class="text-xs text-ink/70 font-bold">📍 京都四条河原町</p>
+          </div>
+          <p class="text-xs bg-mizu/30 p-2 rounded-lg border border-ink/40">
+            🛍️ 京都繁華中心，方便前往神社、錦市場與河原町購物商圈。
+          </p>
+        </div>
+
+        <!-- 住宿 3 -->
+        <div class="bg-paper border-hand-draw p-4 shadow-picturebook flex flex-col justify-between space-y-2">
+          <div>
+            <span class="text-xs font-bold bg-coral px-2 py-0.5 rounded-md border border-ink">10/30～10/31 (1晚)</span>
+            <h3 class="font-black text-lg mt-2 text-ink">心斎橋グランドホテル大阪</h3>
+            <p class="text-xs text-ink/70 font-bold">📍 大阪心齋橋</p>
+          </div>
+          <p class="text-xs bg-coral/30 p-2 rounded-lg border border-ink/40">
+            🍡 大阪美食購物天堂，近道頓堀、法善寺橫丁，最後採買首選。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 每日行程 switcher -->
+    <section id="itinerary" class="space-y-6">
+      <div class="flex items-center justify-between flex-wrap gap-2">
+        <div class="flex items-center gap-2">
+          <span class="text-2xl">📍</span>
+          <h2 class="text-2xl font-black tracking-wide">每日詳細行程</h2>
+        </div>
+        <span class="text-xs font-bold text-ink/60 bg-paper px-2.5 py-1 rounded-full border border-ink">點擊下方頁籤切換天數</span>
+      </div>
+
+      <!-- 天數切換按鈕 (Tab Buttons) -->
+      <div class="flex gap-2 overflow-x-auto pb-2 scrollbar-none" id="day-tabs">
+        <button onclick="switchDay(1)" id="tab-btn-1" class="day-tab flex-1 min-w-[120px] py-3 px-3 border-hand-draw bg-coral text-ink font-black text-sm text-center shadow-picturebook transition-all transform hover:-translate-y-0.5 active:translate-y-0">
+          <div class="text-[10px] opacity-80">10/27 (二)</div>
+          <div>DAY 1 大阪</div>
+        </button>
+        <button onclick="switchDay(2)" id="tab-btn-2" class="day-tab flex-1 min-w-[120px] py-3 px-3 border-hand-draw bg-paper text-ink font-black text-sm text-center shadow-picturebook transition-all transform hover:-translate-y-0.5 active:translate-y-0">
+          <div class="text-[10px] opacity-80">10/28 (三)</div>
+          <div>DAY 2 USJ</div>
+        </button>
+        <button onclick="switchDay(3)" id="tab-btn-3" class="day-tab flex-1 min-w-[120px] py-3 px-3 border-hand-draw bg-paper text-ink font-black text-sm text-center shadow-picturebook transition-all transform hover:-translate-y-0.5 active:translate-y-0">
+          <div class="text-[10px] opacity-80">10/29 (四)</div>
+          <div>DAY 3 京都</div>
+        </button>
+        <button onclick="switchDay(4)" id="tab-btn-4" class="day-tab flex-1 min-w-[120px] py-3 px-3 border-hand-draw bg-paper text-ink font-black text-sm text-center shadow-picturebook transition-all transform hover:-translate-y-0.5 active:translate-y-0">
+          <div class="text-[10px] opacity-80">10/30 (五)</div>
+          <div>DAY 4 東山/心齋橋</div>
+        </button>
+        <button onclick="switchDay(5)" id="tab-btn-5" class="day-tab flex-1 min-w-[120px] py-3 px-3 border-hand-draw bg-paper text-ink font-black text-sm text-center shadow-picturebook transition-all transform hover:-translate-y-0.5 active:translate-y-0">
+          <div class="text-[10px] opacity-80">10/31 (六)</div>
+          <div>DAY 5 返台</div>
+        </button>
+      </div>
+
+      <!-- 天數內容容器 -->
+      <div id="day-content" class="space-y-6">
+
+        <!-- DAY 1 CONTENT -->
+        <div id="day-1-panel" class="day-panel space-y-6 animate-bounce-in">
+          <!-- Banner 卡片 -->
+          <div class="bg-coral/30 border-hand-draw p-5 shadow-picturebook flex flex-col md:flex-row gap-4 items-center justify-between">
+            <div>
+              <div class="inline-block bg-coral text-white font-black text-xs px-2.5 py-0.5 rounded-full border border-ink mb-1">DAY 1 主題</div>
+              <h3 class="text-xl font-black">抵達大阪・梅田試穿 HOKA 👟</h3>
+              <p class="text-xs text-ink/80 mt-1">入境關西機場、前往西九條住宿放行李，再出發至梅田體驗試鞋與享用晚餐。</p>
+            </div>
+            <!-- 手繪 SVG 插圖：HOKA 球鞋 & 關空電車 -->
+            <div class="w-24 h-20 shrink-0">
+              <svg viewBox="0 0 100 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- 慢跑鞋 SVG -->
+                <path d="M10 50 C20 45, 40 40, 60 45 C75 48, 85 40, 90 55 C92 62, 85 68, 70 68 L15 68 C8 68, 5 60, 10 50 Z" fill="#F6D27A" stroke="#3E3A39" stroke-width="3"/>
+                <path d="M25 48 L40 28 C45 25, 55 25, 60 32 L68 46" fill="#F2A497" stroke="#3E3A39" stroke-width="3"/>
+                <circle cx="75" cy="58" r="4" fill="#A8D3E6" stroke="#3E3A39" stroke-width="2"/>
+                <path d="M30 40 L45 42 M35 35 L50 37" stroke="#3E3A39" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+          </div>
+
+          <!-- 時間軸 -->
+          <div class="relative border-l-3 border-ink ml-4 md:ml-6 pl-6 space-y-8 py-2">
+
+            <!-- 13:10 -->
+            <div class="relative">
+              <div class="absolute -left-[35px] top-0 w-6 h-6 bg-yamabuki border-2 border-ink rounded-full flex items-center justify-center font-black text-xs">1</div>
+              <div class="bg-paper border-hand-draw p-4 shadow-picturebook space-y-2">
+                <div class="flex items-center gap-2 flex-wrap">
+                  <span class="text-xs font-black bg-yamabuki px-2 py-0.5 rounded border border-ink">13:10</span>
+                  <h4 class="font-black text-base">抵達關西國際機場 (KIX)</h4>
+                  <span class="text-xs font-bold bg-mizu/50 px-2 py-0.5 rounded-full border border-ink">✈️ 機場入境</span>
+                </div>
+                <ul class="text-xs space-y-1 text-ink/90 list-disc list-inside">
+                  <li>進行入境審查、領取行李、開啓上網服務及整理隨身物品。</li>
+                  <li>預留約 60～90 分鐘通關時間，請依當天人潮狀況彈性調整。</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- 交通: 機場 -> 西九條 -->
+            <div class="relative">
+              <div class="absolute -left-[35px] top-0 w-6 h-6 bg-mizu border-2 border-ink rounded-full flex items-center justify-center font-black text-xs">2</div>
+              <div class="bg-mizu/20 border-hand-draw p-4 shadow-picturebook space-y-2">
+                <div class="flex items-center gap-2 flex-wrap">
+                  <span class="text-xs font-black bg-mizu px-2 py-0.5 rounded border border-ink">🚆 交通指引</span>
+                  <h4 class="font-black text-base">關西機場 → 西九條住宿</h4>
+                </div>
+                <ol class="text-xs space-y-1.5 text-ink/90 list-decimal list-inside">
+                  <li>依指標前往 JR「關西空港站」。</li>
+                  <li>使用 ICOCA 或購買車票進站。</li>
+                  <li>搭乘 JR「關空快速」，確認目的地方向及列車停靠站。</li>
+                  <li>若有直通西九條班次，直接於「西九條站」下車；若不直通，依站內指示於「大阪站」等站轉乘大阪環狀線。</li>
+                  <li>抵達西九條站後，步行前往 <b>Ocean Nishikujo</b>。</li>
+                </ol>
+                <div class="text-xs bg-coral/30 p-2 rounded-lg border border-ink font-bold text-accent">
+                  ⚠️ 提醒：JR 與南海電鐵為不同系統，請勿誤走南海電鐵閘口！
+                </div>
+              </div>
+            </div>
+
+            <!-- 下午放行李 -->
+            <div class="relative">
+              <div class="absolute -left-[35px] top-0 w-6 h-6 bg-wakatake border-2 border-ink rounded-full flex items-center justify-center font-black text-xs">3</div>
+              <div class="bg-paper border-hand-draw p-4 shadow-picturebook space-y-2">
+                <div class="flex items-center gap-2 flex-wrap">
+                  <span class="text-xs font-black bg-wakatake px-2 py-0.5 rounded border border-ink">下午</span>
+                  <h4 class="font-black text-base">住宿放行李、簡單休息</h4>
+                  <span class="text-xs font-bold bg-wakatake/50 px-2 py-0.5 rounded-full border border-ink">🏨 Ocean Nishikujo</span>
+                </div>
+                <p class="text-xs text-ink/90">確認入住方式；若尚未到入住時間，先詢問櫃檯能否寄放行李。</p>
+              </div>
+            </div>
+
+            <!-- 👟 梅田 HOKA 試鞋 -->
+            <div class="relative">
+              <div class="absolute -left-[35px] top-0 w-6 h-6 bg-yamabuki border-2 border-ink rounded-full flex items-center justify-center font-black text-xs">4</div>
+              <div class="bg-yamabuki/20 border-hand-draw p-4 shadow-picturebook space-y-3">
+                <div class="flex items-center justify-between flex-wrap gap-2">
+                  <div class="flex items-center gap-2">
+                    <span class="text-xs font-black bg-yamabuki px-2 py-0.5 rounded border border-ink">👟 重點行程</span>
+                    <h4 class="font-black text-base">西九條 → 梅田 HOKA 試鞋購物</h4>
+                  </div>
+                  <span class="text-xs font-black bg-coral text-white px-2 py-0.5 rounded-full border border-ink">必去標籤</span>
+                </div>
+                <div class="text-xs space-y-2 text-ink/90">
+                  <p><b>路線：</b> JR 西九條站搭大阪環狀線 → 大阪站 → 步行前往「阪急大阪梅田」或梅田商圈 HOKA 門市。</p>
+                  <div class="bg-paper p-3 rounded-xl border-2 border-ink space-y-1">
+                    <div class="font-black text-accent">👟 試穿重點清單：</div>
+                    <ul class="list-disc list-inside space-y-1">
+                      <li>試穿目標：<b>Clifton 11 Wide</b>、<b>Bondi 9 Wide</b></li>
+                      <li>腳型數據：腳長 26 cm、前掌寬 11 cm，<b>優先試 Wide 寬楦</b></li>
+                      <li>測試細節：穿平常走路會穿的襪子，實際走動測試</li>
+                      <li>確認腳趾空間、前掌是否受壓、腳跟是否滑動</li>
+                      <li>切記：不要只因為折扣而購買不合腳的鞋！</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 晚餐與休息 -->
+            <div class="relative">
+              <div class="absolute -left-[35px] top-0 w-6 h-6 bg-coral border-2 border-ink rounded-full flex items-center justify-center font-black text-xs">5</div>
+              <div class="bg-paper border-hand-draw p-4 shadow-picturebook space-y-2">
+                <div class="flex items-center gap-2 flex-wrap">
+                  <span class="text-xs font-black bg-coral px-2 py-0.5 rounded border border-ink">🍽️ 晚餐 & 晚間</span>
+                  <h4 class="font-black text-base">梅田或西九條附近自由用餐</h4>
+                </div>
+                <p class="text-xs text-ink/90">晚餐後返回西九條住宿休息整理，<b>隔天 USJ 需要早起</b>，建議提早就寢！</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- DAY 2 CONTENT -->
+        <div id="day-2-panel" class="day-panel hidden space-y-6">
+          <!-- Banner -->
+          <div class="bg-yamabuki/40 border-hand-draw p-5 shadow-picturebook flex flex-col md:flex-row gap-4 items-center justify-between">
+            <div>
+              <div class="inline-block bg-yamabuki text-ink font-black text-xs px-2.5 py-0.5 rounded-full border border-ink mb-1">DAY 2 主題</div>
+              <h3 class="text-xl font-black">日本環球影城 USJ 全日狂歡 🎢</h3>
+              <p class="text-xs text-ink/80 mt-1">進入夢幻魔法與瑪利歐世界！早起卡位、善用 Express Pass。</p>
+            </div>
+            <!-- 手繪 SVG 插圖：瑪利歐帽子 & 魔法棒 -->
+            <div class="w-24 h-20 shrink-0">
+              <svg viewBox="0 0 100 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- 瑪利歐帽子 -->
+                <path d="M10 55 C10 35, 30 25, 50 25 C70 25, 90 35, 90 55 C90 60, 10 60, 10 55 Z" fill="#E86A58" stroke="#3E3A39" stroke-width="3"/>
+                <path d="M5 55 Q 50 48 95 55 L 90 65 Q 50 58 10 65 Z" fill="#E86A58" stroke="#3E3A39" stroke-width="3"/>
+                <circle cx="50" cy="40" r="10" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2"/>
+                <text x="46" y="45" font-weight="bold" font-size="12" fill="#E86A58">M</text>
+              </svg>
+            </div>
+          </div>
+
+          <!-- 優先順序 Card -->
+          <div class="bg-paper border-hand-draw p-4 shadow-picturebook space-y-2">
+            <h4 class="font-black text-sm flex items-center gap-2">
+              <span>🎯</span> 遊玩優先順序與攻略策略
+            </h4>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs font-bold text-center">
+              <div class="bg-coral/30 p-2 rounded-xl border border-ink">1️⃣ 哈利波特園區 / 霍格華茲城堡</div>
+              <div class="bg-yamabuki/40 p-2 rounded-xl border border-ink">2️⃣ 超級任天堂世界 (瑪利歐/咚奇剛)</div>
+              <div class="bg-mizu/30 p-2 rounded-xl border border-ink">3️⃣ 其他熱門設施與商店採買</div>
+            </div>
+          </div>
+
+          <!-- 時間軸 -->
+          <div class="relative border-l-3 border-ink ml-4 md:ml-6 pl-6 space-y-8 py-2">
+
+            <!-- 清晨出發 -->
+            <div class="relative">
+              <div class="absolute -left-[35px] top-0 w-6 h-6 bg-yamabuki border-2 border-ink rounded-full flex items-center justify-center font-black text-xs">1</div>
+              <div class="bg-paper border-hand-draw p-4 shadow-picturebook space-y-2">
+                <div class="flex items-center gap-2 flex-wrap">
+                  <span class="text-xs font-black bg-yamabuki px-2 py-0.5 rounded border border-ink">🌅 清晨 06:30</span>
+                  <h4 class="font-black text-base">西九條 → USJ 出發抵達</h4>
+                </div>
+                <ol class="text-xs space-y-1 text-ink/90 list-decimal list-inside">
+                  <li>從住宿步行前往 JR 西九條站。</li>
+                  <li>搭乘 JR 櫻島線（夢咲線），往「櫻島」方向。</li>
+                  <li>約 1 站抵達「Universal City／ユニバーサルシティ站」。</li>
+                  <li>出站後步行前往 USJ 大門。</li>
+                </ol>
+                <div class="text-xs bg-yamabuki/30 p-2 rounded-lg border border-ink font-bold">
+                  ⏰ 建議約 <b>06:30 抵達園區門口排隊</b>！實際開園時間常比官方公告早 30-60 分鐘。
+                </div>
+              </div>
+            </div>
+
+            <!-- 🎟️ 已購票證管理 -->
+            <div class="relative">
+              <div class="absolute -left-[35px] top-0 w-6 h-6 bg-coral border-2 border-ink rounded-full flex items-center justify-center font-black text-xs">2</div>
+              <div class="bg-coral/20 border-hand-draw p-4 shadow-picturebook space-y-2">
+                <div class="flex items-center justify-between flex-wrap gap-2">
+                  <div class="flex items-center gap-2">
+                    <span class="text-xs font-black bg-coral px-2 py-0.5 rounded border border-ink">🎟️ 票券檢查</span>
+                    <h4 class="font-black text-base">Studio Pass + Express Pass</h4>
+                  </div>
+                  <span class="text-xs font-black bg-coral text-white px-2 py-0.5 rounded-full border border-ink">重要</span>
+                </div>
+                <ul class="text-xs space-y-1.5 text-ink/90 list-disc list-inside">
+                  <li>事先下載 <b>USJ 官方 App</b> 並綁定門票。</li>
+                  <li>核對 Express Pass 指定設施與入場時間（例如任天堂世界與哈利波特時段）。</li>
+                  <li>確認任天堂世界是否需要抽整理券 (Area Timed Entry Ticket)。</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- 園區行程與用餐 -->
+            <div class="relative">
+              <div class="absolute -left-[35px] top-0 w-6 h-6 bg-mizu border-2 border-ink rounded-full flex items-center justify-center font-black text-xs">3</div>
+              <div class="bg-paper border-hand-draw p-4 shadow-picturebook space-y-2">
+                <div class="flex items-center gap-2 flex-wrap">
+                  <span class="text-xs font-black bg-mizu px-2 py-0.5 rounded border border-ink">全天</span>
+                  <h4 class="font-black text-base">園區遊玩與餐飲</h4>
+                </div>
+                <p class="text-xs text-ink/90">
+                  午餐與晚餐建議避開正尖峰時段，在園區餐廳或主題小吃攤（如奶油啤酒、瑪利歐餐廳）解決。
+                </p>
+                <p class="text-xs text-ink/90">
+                  🌙 玩到閉園或體力允許的時間，再搭 JR 櫻島線返回西九條休息。
+                </p>
+              </div>
+            </div>
+
+            <!-- ⚠️ 颱風備案卡片 -->
+            <div class="relative">
+              <div class="absolute -left-[35px] top-0 w-6 h-6 bg-accent border-2 border-ink text-white rounded-full flex items-center justify-center font-black text-xs">!</div>
+              <div class="bg-accent/10 border-hand-draw border-accent p-4 shadow-picturebook space-y-2">
+                <div class="flex items-center gap-2">
+                  <span class="text-xs font-black bg-accent text-white px-2 py-0.5 rounded border border-ink">⚠️ 颱風與惡劣天氣應變</span>
+                </div>
+                <p class="text-xs text-ink/90">
+                  若遇颱風、交通停駛或園區停運，請優先確認：<b>1. Peach 航班公告</b>、<b>2. USJ 官方營運及票券公告</b>、<b>3. JR/大阪 Metro 交通營運狀況</b>。一般下雨不等於能改期退票，需視官方政策決定。
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- DAY 3 CONTENT -->
+        <div id="day-3-panel" class="day-panel hidden space-y-6">
+          <!-- Banner -->
+          <div class="bg-mizu/40 border-hand-draw p-5 shadow-picturebook flex flex-col md:flex-row gap-4 items-center justify-between">
+            <div>
+              <div class="inline-block bg-mizu text-ink font-black text-xs px-2.5 py-0.5 rounded-full border border-ink mb-1">DAY 3 主題</div>
+              <h3 class="text-xl font-black">京都三間神社巡禮・河原町購物 ⛩️</h3>
+              <p class="text-xs text-ink/80 mt-1">走訪下鴨神社、岡崎神社（可愛兔子）與因幡堂，晚間逛四条河原町商店街。</p>
+            </div>
+            <!-- 手繪 SVG 插圖：鳥居與兔子 -->
+            <div class="w-24 h-20 shrink-0">
+              <svg viewBox="0 0 100 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- 岡崎神社兔子 -->
+                <ellipse cx="50" cy="55" rx="20" ry="18" fill="#FFFCF6" stroke="#3E3A39" stroke-width="3"/>
+                <ellipse cx="42" cy="28" rx="5" ry="14" fill="#FFFCF6" stroke="#3E3A39" stroke-width="3"/>
+                <ellipse cx="58" cy="28" rx="5" ry="14" fill="#FFFCF6" stroke="#3E3A39" stroke-width="3"/>
+                <circle cx="44" cy="50" r="2" fill="#3E3A39"/>
+                <circle cx="56" cy="50" r="2" fill="#3E3A39"/>
+                <path d="M48 55 Q 50 58 52 55" stroke="#F2A497" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+          </div>
+
+          <!-- 時間軸 -->
+          <div class="relative border-l-3 border-ink ml-4 md:ml-6 pl-6 space-y-8 py-2">
+
+            <!-- 08:00 交通: 大阪 -> 京都 -->
+            <div class="relative">
+              <div class="absolute -left-[35px] top-0 w-6 h-6 bg-mizu border-2 border-ink rounded-full flex items-center justify-center font-black text-xs">1</div>
+              <div class="bg-mizu/20 border-hand-draw p-4 shadow-picturebook space-y-2">
+                <div class="flex items-center gap-2 flex-wrap">
+                  <span class="text-xs font-black bg-mizu px-2 py-0.5 rounded border border-ink">08:00 出發</span>
+                  <h4 class="font-black text-base">西九條 → 京都四条河原町</h4>
+                </div>
+                <ol class="text-xs space-y-1 text-ink/90 list-decimal list-inside">
+                  <li>JR 西九條站搭大阪環狀線 →「大阪站」。</li>
+                  <li>步行轉乘「阪急大阪梅田站」。</li>
+                  <li>搭乘阪急京都線（往京都河原町方向）。</li>
+                  <li>抵達「京都河原町站」出站，步行前往 <b>Rakuten STAY URBAN 四条河原町</b> 寄放行李。</li>
+                </ol>
+                <div class="text-xs bg-paper p-2 rounded-lg border border-ink">
+                  📌 預計 09:00 前後抵達京都。先確認能否寄放行李，若不能則利用車站置物櫃。
+                </div>
+              </div>
+            </div>
+
+            <!-- 09:15-10:45 下鴨神社 -->
+            <div class="relative">
+              <div class="absolute -left-[35px] top-0 w-6 h-6 bg-wakatake border-2 border-ink rounded-full flex items-center justify-center font-black text-xs">2</div>
+              <div class="bg-paper border-hand-draw p-4 shadow-picturebook space-y-2">
+                <div class="flex items-center justify-between flex-wrap gap-2">
+                  <div class="flex items-center gap-2">
+                    <span class="text-xs font-black bg-wakatake px-2 py-0.5 rounded border border-ink">09:15–10:45</span>
+                    <h4 class="font-black text-base">🌳 下鴨神社</h4>
+                  </div>
+                  <span class="text-xs font-black bg-coral text-white px-2 py-0.5 rounded-full border border-ink">必去</span>
+                </div>
+                <ul class="text-xs space-y-1 text-ink/90 list-disc list-inside">
+                  <li>漫步「糺之森」感受森林芬多精。</li>
+                  <li>參拜下鴨神社本殿。</li>
+                  <li>前往河井神社畫「鏡繪馬」祈求美麗。</li>
+                  <li>挑選特色御守與繪馬授與品。</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- 🚕 10:45 計程車前往岡崎神社 -->
+            <div class="relative">
+              <div class="absolute -left-[35px] top-0 w-6 h-6 bg-yamabuki border-2 border-ink rounded-full flex items-center justify-center font-black text-xs">3</div>
+              <div class="bg-yamabuki/20 border-hand-draw p-4 shadow-picturebook space-y-2">
+                <div class="flex items-center justify-between flex-wrap gap-2">
+                  <div class="flex items-center gap-2">
+                    <span class="text-xs font-black bg-yamabuki px-2 py-0.5 rounded border border-ink">🐰 11:15–12:00</span>
+                    <h4 class="font-black text-base">岡崎神社 (兔子神社)</h4>
+                  </div>
+                  <span class="text-xs font-black bg-coral text-white px-2 py-0.5 rounded-full border border-ink">必去</span>
+                </div>
+                <p class="text-xs text-ink/90">
+                  🚕 <b>建議搭計程車</b>：從下鴨神社搭計程車直達岡崎神社，節省等公車時間。
+                </p>
+                <ul class="text-xs space-y-1 text-ink/90 list-disc list-inside">
+                  <li>求可愛兔子御守、兔子籤。</li>
+                  <li>拍攝神社內各式可愛兔子雕像。</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- 12:00-13:10 因幡堂/平等寺 -->
+            <div class="relative">
+              <div class="absolute -left-[35px] top-0 w-6 h-6 bg-coral border-2 border-ink rounded-full flex items-center justify-center font-black text-xs">4</div>
+              <div class="bg-paper border-hand-draw p-4 shadow-picturebook space-y-2">
+                <div class="flex items-center justify-between flex-wrap gap-2">
+                  <div class="flex items-center gap-2">
+                    <span class="text-xs font-black bg-coral px-2 py-0.5 rounded border border-ink">🙏 12:30–13:10</span>
+                    <h4 class="font-black text-base">因幡堂 / 平等寺</h4>
+                  </div>
+                  <span class="text-xs font-black bg-coral text-white px-2 py-0.5 rounded-full border border-ink">必去</span>
+                </div>
+                <p class="text-xs text-ink/90">
+                  🚕 岡崎神社搭計程車前往京都市中心的因幡堂。參拜藥師如來，欣賞獨特六貓御守與動物題材御朱印。
+                </p>
+              </div>
+            </div>
+
+            <!-- 午餐與下午茶 -->
+            <div class="relative">
+              <div class="absolute -left-[35px] top-0 w-6 h-6 bg-wakatake border-2 border-ink rounded-full flex items-center justify-center font-black text-xs">5</div>
+              <div class="bg-paper border-hand-draw p-4 shadow-picturebook space-y-2">
+                <div class="flex items-center gap-2 flex-wrap">
+                  <span class="text-xs font-black bg-wakatake px-2 py-0.5 rounded border border-ink">13:15–16:30</span>
+                  <h4 class="font-black text-base">🍱 午餐、抹茶甜點 & 飯店 Check-in</h4>
+                </div>
+                <ul class="text-xs space-y-1 text-ink/90 list-disc list-inside">
+                  <li><b>13:15–14:15 午餐：</b>四条／烏丸周邊享用定食、烏龍麵。</li>
+                  <li><b>14:15–15:15 甜點：</b>品嚐京都抹茶咖啡廳（不為排隊名店花太多時間）。</li>
+                  <li><b>15:15–16:30：</b>返回 Rakuten STAY 辦理入住與進房稍作休息。</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- 16:30 購物行程 -->
+            <div class="relative">
+              <div class="absolute -left-[35px] top-0 w-6 h-6 bg-mizu border-2 border-ink rounded-full flex items-center justify-center font-black text-xs">6</div>
+              <div class="bg-mizu/20 border-hand-draw p-4 shadow-picturebook space-y-2">
+                <div class="flex items-center gap-2 flex-wrap">
+                  <span class="text-xs font-black bg-mizu px-2 py-0.5 rounded border border-ink">🛍️ 16:30 之後</span>
+                  <h4 class="font-black text-base">四条河原町商圈漫步購物</h4>
+                </div>
+                <div class="text-xs space-y-1 text-ink/90">
+                  <p><b>推薦路線：</b> 四条河原町 → 寺町通 → 新京極商店街 → 錦市場周邊</p>
+                  <p>💡 錦市場部分店家較早打烊；晚餐於河原町周邊自由安排。</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- DAY 4 CONTENT -->
+        <div id="day-4-panel" class="day-panel hidden space-y-6">
+          <!-- Banner -->
+          <div class="bg-wakatake/40 border-hand-draw p-5 shadow-picturebook flex flex-col md:flex-row gap-4 items-center justify-between">
+            <div>
+              <div class="inline-block bg-wakatake text-ink font-black text-xs px-2.5 py-0.5 rounded-full border border-ink mb-1">DAY 4 主題</div>
+              <h3 class="text-xl font-black">京都東山古風漫步・返大阪心齋橋 🍁</h3>
+              <p class="text-xs text-ink/80 mt-1">晨間走訪二年坂、三年坂，下午移動回大阪心齋橋、道頓堀與法善寺橫丁。</p>
+            </div>
+            <!-- 手繪 SVG 插圖：三重塔/清水寺 -->
+            <div class="w-24 h-20 shrink-0">
+              <svg viewBox="0 0 100 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- 塔身 -->
+                <rect x="40" y="25" width="20" height="45" fill="#F2A497" stroke="#3E3A39" stroke-width="3"/>
+                <path d="M30 30 L50 15 L70 30 Z" fill="#F6D27A" stroke="#3E3A39" stroke-width="3"/>
+                <path d="M32 45 L50 35 L68 45 Z" fill="#F6D27A" stroke="#3E3A39" stroke-width="3"/>
+                <path d="M34 60 L50 50 L66 60 Z" fill="#F6D27A" stroke="#3E3A39" stroke-width="3"/>
+              </svg>
+            </div>
+          </div>
+
+          <!-- 時間軸 -->
+          <div class="relative border-l-3 border-ink ml-4 md:ml-6 pl-6 space-y-8 py-2">
+
+            <!-- 晨間東山 -->
+            <div class="relative">
+              <div class="absolute -left-[35px] top-0 w-6 h-6 bg-yamabuki border-2 border-ink rounded-full flex items-center justify-center font-black text-xs">1</div>
+              <div class="bg-paper border-hand-draw p-4 shadow-picturebook space-y-2">
+                <div class="flex items-center gap-2 flex-wrap">
+                  <span class="text-xs font-black bg-yamabuki px-2 py-0.5 rounded border border-ink">🌅 早上</span>
+                  <h4 class="font-black text-base">東山散步：二年坂、三年坂</h4>
+                </div>
+                <ul class="text-xs space-y-1 text-ink/90 list-disc list-inside">
+                  <li>早點出門避開觀光人潮。</li>
+                  <li>逛陶器、手作小物、特色茶店與甜點店。</li>
+                </ul>
+                <div class="bg-yamabuki/20 p-2.5 rounded-xl border border-ink text-xs space-y-1">
+                  <div class="font-bold text-accent">🍁 清水寺取捨原則：</div>
+                  <p>若天氣好且楓葉紅、人潮可接受，安排進入清水寺；若人潮擁擠或楓葉尚未理想，則以坂道與小店為主，避免壓縮回大阪交通時間。</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- 退房與行李 -->
+            <div class="relative">
+              <div class="absolute -left-[35px] top-0 w-6 h-6 bg-mizu border-2 border-ink rounded-full flex items-center justify-center font-black text-xs">2</div>
+              <div class="bg-paper border-hand-draw p-4 shadow-picturebook space-y-2">
+                <div class="flex items-center gap-2 flex-wrap">
+                  <span class="text-xs font-black bg-mizu px-2 py-0.5 rounded border border-ink">🧳 退房準備</span>
+                  <h4 class="font-black text-base">行李寄放策略</h4>
+                </div>
+                <p class="text-xs text-ink/90">
+                  事先向 Rakuten STAY 確認退房後能否寄放行李。若可則輕裝逛東山後回住宿取行李；若不可則先放在河原町車站置物櫃。
+                </p>
+              </div>
+            </div>
+
+            <!-- 京都 -> 大阪心齋橋 -->
+            <div class="relative">
+              <div class="absolute -left-[35px] top-0 w-6 h-6 bg-coral border-2 border-ink rounded-full flex items-center justify-center font-black text-xs">3</div>
+              <div class="bg-coral/20 border-hand-draw p-4 shadow-picturebook space-y-2">
+                <div class="flex items-center gap-2 flex-wrap">
+                  <span class="text-xs font-black bg-coral px-2 py-0.5 rounded border border-ink">🚆 交通指引</span>
+                  <h4 class="font-black text-base">京都河原町 → 大阪心齋橋</h4>
+                </div>
+                <ol class="text-xs space-y-1 text-ink/90 list-decimal list-inside">
+                  <li>京都河原町站取行李，搭乘阪急京都線前往「大阪梅田站」。</li>
+                  <li>抵達梅田後，依指標步行轉乘大阪 Metro 御堂筋線「梅田站」。</li>
+                  <li>搭御堂筋線（往天王寺/難波方向）至「心齋橋站」下車。</li>
+                  <li>步行前往 <b>心斎橋グランドホテル大阪</b> 辦理入住。</li>
+                </ol>
+                <p class="text-xs bg-paper p-2 rounded-lg border border-ink font-bold text-accent">
+                  📌 梅田站內轉乘需步行一段距離，攜帶大行李請多預留時間。
+                </p>
+              </div>
+            </div>
+
+            <!-- 下午/晚上 心齋橋 -->
+            <div class="relative">
+              <div class="absolute -left-[35px] top-0 w-6 h-6 bg-wakatake border-2 border-ink rounded-full flex items-center justify-center font-black text-xs">4</div>
+              <div class="bg-paper border-hand-draw p-4 shadow-picturebook space-y-2">
+                <div class="flex items-center gap-2 flex-wrap">
+                  <span class="text-xs font-black bg-wakatake px-2 py-0.5 rounded border border-ink">🛍️ 下午與晚上</span>
+                  <h4 class="font-black text-base">心齋橋、道頓堀美食採買</h4>
+                </div>
+                <p class="text-xs text-ink/90 font-bold">
+                  步行路線：心齋橋筋商店街 → 道頓堀固力果跑跑人 → 法善寺橫丁（若體力充沛可至裏難波）。
+                </p>
+                <p class="text-xs text-ink/80">
+                  晚餐於附近自由安排（拉麵、串炸、章魚燒）。返回飯店整理行李，準備隔天搭機。
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- DAY 5 CONTENT -->
+        <div id="day-5-panel" class="day-panel hidden space-y-6">
+          <!-- Banner -->
+          <div class="bg-coral/30 border-hand-draw p-5 shadow-picturebook flex flex-col md:flex-row gap-4 items-center justify-between">
+            <div>
+              <div class="inline-block bg-coral text-white font-black text-xs px-2.5 py-0.5 rounded-full border border-ink mb-1">DAY 5 主題</div>
+              <h3 class="text-xl font-black">最後補貨・南海 Rapi:t 前往關空返台 ✈️</h3>
+              <p class="text-xs text-ink/80 mt-1">享用早餐、心齋橋最後巡禮採買，搭乘特急 Rapi:t 列車直達 KIX T2。</p>
+            </div>
+            <!-- 手繪 SVG 插圖：南海 Rapi:t 鐵道車頭 -->
+            <div class="w-24 h-20 shrink-0">
+              <svg viewBox="0 0 100 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Rapi:t 復古鐵面人車頭造型 -->
+                <path d="M20 60 C20 30, 40 20, 80 20 L80 60 Z" fill="#A8D3E6" stroke="#3E3A39" stroke-width="3"/>
+                <circle cx="35" cy="40" r="8" fill="#F6D27A" stroke="#3E3A39" stroke-width="2"/>
+                <rect x="50" y="30" width="25" height="15" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2"/>
+                <line x1="10" y1="60" x2="90" y2="60" stroke="#3E3A39" stroke-width="4"/>
+              </svg>
+            </div>
+          </div>
+
+          <!-- 已訂車票資訊卡片 -->
+          <div class="bg-yamabuki border-hand-draw p-4 shadow-picturebook space-y-2">
+            <div class="flex items-center justify-between flex-wrap gap-2">
+              <span class="font-black text-sm text-ink flex items-center gap-1">
+                🎫 南海電鐵 特急 Rapi:t α 19 號（已預訂）
+              </span>
+              <span class="text-xs bg-paper font-bold px-2 py-0.5 rounded border border-ink">特急券號碼：614279506</span>
+            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs font-bold text-center">
+              <div class="bg-paper p-2 rounded-lg border border-ink">發車：天下茶屋<br><span class="text-sm text-accent font-black">11:09</span></div>
+              <div class="bg-paper p-2 rounded-lg border border-ink">抵達：關西機場<br><span class="text-sm text-accent font-black">11:43</span></div>
+              <div class="bg-paper p-2 rounded-lg border border-ink">車廂：<span class="text-sm font-black">01 號車廂</span></div>
+              <div class="bg-paper p-2 rounded-lg border border-ink">座位：<span class="text-sm font-black">43、44 號</span></div>
+            </div>
+          </div>
+
+          <!-- 時間軸 -->
+          <div class="relative border-l-3 border-ink ml-4 md:ml-6 pl-6 space-y-8 py-2">
+
+            <!-- 晨間採買與出發 -->
+            <div class="relative">
+              <div class="absolute -left-[35px] top-0 w-6 h-6 bg-yamabuki border-2 border-ink rounded-full flex items-center justify-center font-black text-xs">1</div>
+              <div class="bg-paper border-hand-draw p-4 shadow-picturebook space-y-2">
+                <div class="flex items-center gap-2 flex-wrap">
+                  <span class="text-xs font-black bg-yamabuki px-2 py-0.5 rounded border border-ink">08:30–10:00</span>
+                  <h4 class="font-black text-base">最後採買 & 退房出發</h4>
+                </div>
+                <ul class="text-xs space-y-1 text-ink/90 list-disc list-inside">
+                  <li>心齋橋周邊藥妝、藥局做最後補貨（不上遠距離景點）。</li>
+                  <li>整理護照、手機及登機資料。</li>
+                  <li>建議約 <b>10:00–10:10 從飯店出發</b>，預留大行李移動時間。</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- 心齋橋 -> 天下茶屋 -->
+            <div class="relative">
+              <div class="absolute -left-[35px] top-0 w-6 h-6 bg-mizu border-2 border-ink rounded-full flex items-center justify-center font-black text-xs">2</div>
+              <div class="bg-mizu/20 border-hand-draw p-4 shadow-picturebook space-y-2">
+                <div class="flex items-center gap-2 flex-wrap">
+                  <span class="text-xs font-black bg-mizu px-2 py-0.5 rounded border border-ink">🚇 10:10–10:45</span>
+                  <h4 class="font-black text-base">飯店 → 天下茶屋站轉乘</h4>
+                </div>
+                <ol class="text-xs space-y-1 text-ink/90 list-decimal list-inside">
+                  <li>飯店步行前往大阪 Metro「長堀橋站」。</li>
+                  <li>搭乘「堺筋線」（往天下茶屋方向）。</li>
+                  <li>於終點站「天下茶屋站」下車。</li>
+                  <li>依指標前往南海電鐵月台，預留時間尋找 01 號車廂。</li>
+                </ol>
+              </div>
+            </div>
+
+            <!-- Rapi:t 乘車 -->
+            <div class="relative">
+              <div class="absolute -left-[35px] top-0 w-6 h-6 bg-coral border-2 border-ink rounded-full flex items-center justify-center font-black text-xs">3</div>
+              <div class="bg-paper border-hand-draw p-4 shadow-picturebook space-y-2">
+                <div class="flex items-center gap-2 flex-wrap">
+                  <span class="text-xs font-black bg-coral px-2 py-0.5 rounded border border-ink">🚆 11:09–11:43</span>
+                  <h4 class="font-black text-base">搭乘南海 Rapi:t α 19 號</h4>
+                </div>
+                <p class="text-xs text-ink/90">
+                  舒適直達關西機場站。11:43 抵達關西機場站出閘口。
+                </p>
+              </div>
+            </div>
+
+            <!-- 接駁車至 T2 報到 -->
+            <div class="relative">
+              <div class="absolute -left-[35px] top-0 w-6 h-6 bg-wakatake border-2 border-ink rounded-full flex items-center justify-center font-black text-xs">4</div>
+              <div class="bg-wakatake/20 border-hand-draw p-4 shadow-picturebook space-y-2">
+                <div class="flex items-center justify-between flex-wrap gap-2">
+                  <div class="flex items-center gap-2">
+                    <span class="text-xs font-black bg-wakatake px-2 py-0.5 rounded border border-ink">🚌 11:50–12:10</span>
+                    <h4 class="font-black text-base">關空站 → 免費接駁巴士 → T2 航廈</h4>
+                  </div>
+                  <span class="text-xs font-black bg-coral text-white px-2 py-0.5 rounded-full border border-ink">必讀</span>
+                </div>
+                <ol class="text-xs space-y-1 text-ink/90 list-decimal list-inside">
+                  <li>出南海電鐵閘口後，依指標前往 Aeroplaza。</li>
+                  <li>前往 1 樓免費接駁巴士乘車處。</li>
+                  <li>搭乘接駁巴士至第 2 航廈 (T2)（車程約 7–9 分鐘）。</li>
+                  <li>抵達 T2 後，辦理 Peach 樂桃國際線報到、託運與出境。</li>
+                </ol>
+                <div class="text-xs bg-paper p-2 rounded-lg border border-ink font-bold">
+                  📌 預計約 12:00 抵達 T2，時間非常充裕！班機起飛時間為 15:25。
+                </div>
+              </div>
+            </div>
+
+            <!-- 返台航班 -->
+            <div class="relative">
+              <div class="absolute -left-[35px] top-0 w-6 h-6 bg-accent border-2 border-ink text-white rounded-full flex items-center justify-center font-black text-xs">5</div>
+              <div class="bg-paper border-hand-draw p-4 shadow-picturebook space-y-2">
+                <div class="flex items-center gap-2 flex-wrap">
+                  <span class="text-xs font-black bg-accent text-white px-2 py-0.5 rounded border border-ink">✈️ 15:25 起飛</span>
+                  <h4 class="font-black text-base">Peach MM027 飛往台灣</h4>
+                </div>
+                <p class="text-xs text-ink/90">
+                  預計 17:55 順利抵達台灣桃園機場。結束愉快的關西 5 天 4 夜之旅！
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 互動待辦清單 Checklist -->
+    <section id="checklist" class="space-y-4">
+      <div class="flex items-center justify-between flex-wrap gap-2">
+        <div class="flex items-center gap-2">
+          <span class="text-2xl">✅</span>
+          <h2 class="text-2xl font-black tracking-wide">出發前檢查清單</h2>
+        </div>
+        <!-- 進度條 -->
+        <div class="flex items-center gap-2 bg-paper px-3 py-1 rounded-full border-2 border-ink text-xs font-bold">
+          <span>完成度：</span>
+          <span id="checklist-progress-text" class="text-accent font-black">0/8</span>
+        </div>
+      </div>
+
+      <div class="bg-paper border-hand-draw p-5 shadow-picturebook space-y-3">
+        <div class="w-full bg-paper border-2 border-ink h-3 rounded-full overflow-hidden">
+          <div id="checklist-progress-bar" class="bg-wakatake h-full w-0 transition-all duration-300"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs md:text-sm font-bold pt-2" id="checklist-items">
+          
+          <label class="flex items-center gap-3 p-2.5 rounded-xl border-2 border-ink bg-paper hover:bg-yamabuki/20 cursor-pointer transition">
+            <input type="checkbox" onchange="toggleCheck(this, 'chk1')" id="chk1" class="w-5 h-5 accent-accent cursor-pointer">
+            <span>完成 Visit Japan Web (VJW) 填寫</span>
+          </label>
+
+          <label class="flex items-center gap-3 p-2.5 rounded-xl border-2 border-ink bg-paper hover:bg-yamabuki/20 cursor-pointer transition">
+            <input type="checkbox" onchange="toggleCheck(this, 'chk2')" id="chk2" class="w-5 h-5 accent-accent cursor-pointer">
+            <span>確認 Peach 航班、行李額度及報到規定</span>
+          </label>
+
+          <label class="flex items-center gap-3 p-2.5 rounded-xl border-2 border-ink bg-paper hover:bg-yamabuki/20 cursor-pointer transition">
+            <input type="checkbox" onchange="toggleCheck(this, 'chk3')" id="chk3" class="w-5 h-5 accent-accent cursor-pointer">
+            <span>確認 USJ Studio Pass、Express Pass 時段</span>
+          </label>
+
+          <label class="flex items-center gap-3 p-2.5 rounded-xl border-2 border-ink bg-paper hover:bg-yamabuki/20 cursor-pointer transition">
+            <input type="checkbox" onchange="toggleCheck(this, 'chk4')" id="chk4" class="w-5 h-5 accent-accent cursor-pointer">
+            <span>查看颱風、航班與鐵路營運公告</span>
+          </label>
+
+          <label class="flex items-center gap-3 p-2.5 rounded-xl border-2 border-ink bg-paper hover:bg-yamabuki/20 cursor-pointer transition">
+            <input type="checkbox" onchange="toggleCheck(this, 'chk5')" id="chk5" class="w-5 h-5 accent-accent cursor-pointer">
+            <span>向 Rakuten STAY 確認寄放行李規則</span>
+          </label>
+
+          <label class="flex items-center gap-3 p-2.5 rounded-xl border-2 border-ink bg-paper hover:bg-yamabuki/20 cursor-pointer transition">
+            <input type="checkbox" onchange="toggleCheck(this, 'chk6')" id="chk6" class="w-5 h-5 accent-accent cursor-pointer">
+            <span>確認 Rapi:t 電子票、班次 (11:09) 與座位</span>
+          </label>
+
+          <label class="flex items-center gap-3 p-2.5 rounded-xl border-2 border-ink bg-paper hover:bg-yamabuki/20 cursor-pointer transition">
+            <input type="checkbox" onchange="toggleCheck(this, 'chk7')" id="chk7" class="w-5 h-5 accent-accent cursor-pointer">
+            <span>準備 ICOCA、eSIM、行動電源及雨具</span>
+          </label>
+
+          <label class="flex items-center gap-3 p-2.5 rounded-xl border-2 border-ink bg-paper hover:bg-yamabuki/20 cursor-pointer transition">
+            <input type="checkbox" onchange="toggleCheck(this, 'chk8')" id="chk8" class="w-5 h-5 accent-accent cursor-pointer">
+            <span>查看大阪京都天氣，穿著好走鞋款</span>
+          </label>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 頁尾結語 -->
+    <footer class="text-center py-6 text-xs text-ink/70 space-y-2 border-t-2 border-ink/20">
+      <p class="font-bold">🇯🇵 祝旅途順利・平安充實！</p>
+      <p>© 2026 Osaka & Kyoto Autumn Trip • Handcrafted Picturebook Style</p>
+    </footer>
+
+  </main>
+
+  <script>
+    // 倒數計時器邏輯
+    function updateCountdown() {
+      const targetDate = new Date('2026-10-27T09:40:00+08:00').getTime();
+      const now = new Date().getTime();
+      const difference = targetDate - now;
+
+      if (difference > 0) {
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+        document.getElementById('cd-days').textContent = String(days).padStart(2, '0');
+        document.getElementById('cd-hours').textContent = String(hours).padStart(2, '0');
+        document.getElementById('cd-mins').textContent = String(minutes).padStart(2, '0');
+        document.getElementById('cd-secs').textContent = String(seconds).padStart(2, '0');
+      } else {
+        document.getElementById('countdown').innerHTML = '<span class="text-lg font-black text-accent">🎉 旅程已經展開！祝玩得開心！</span>';
+      }
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    // 每日行程切換邏輯
+    function switchDay(dayNum) {
+      // 隱藏所有面板
+      document.querySelectorAll('.day-panel').forEach(panel => {
+        panel.classList.add('hidden');
+        panel.classList.remove('animate-bounce-in');
+      });
+
+      // 重設所有按鈕樣式
+      document.querySelectorAll('.day-tab').forEach(btn => {
+        btn.classList.remove('bg-coral', 'bg-yamabuki', 'bg-mizu', 'bg-wakatake');
+        btn.classList.add('bg-paper');
+      });
+
+      // 顯示目標面板
+      const targetPanel = document.getElementById(`day-${dayNum}-panel`);
+      if (targetPanel) {
+        targetPanel.classList.remove('hidden');
+        // 加入彈跳動畫
+        setTimeout(() => {
+          targetPanel.classList.add('animate-bounce-in');
+        }, 10);
+      }
+
+      // 高亮當前按鈕
+      const activeBtn = document.getElementById(`tab-btn-${dayNum}`);
+      if (activeBtn) {
+        activeBtn.classList.remove('bg-paper');
+        const bgColors = ['bg-coral', 'bg-yamabuki', 'bg-mizu', 'bg-wakatake', 'bg-coral'];
+        activeBtn.classList.add(bgColors[(dayNum - 1) % bgColors.length]);
+      }
+    }
+
+    // 待辦清單 localStorage 儲存與進度更新
+    function toggleCheck(checkbox, id) {
+      localStorage.setItem(`japan_trip_${id}`, checkbox.checked);
+      updateChecklistProgress();
+    }
+
+    function updateChecklistProgress() {
+      const items = ['chk1', 'chk2', 'chk3', 'chk4', 'chk5', 'chk6', 'chk7', 'chk8'];
+      let checkedCount = 0;
+
+      items.forEach(id => {
+        const checkbox = document.getElementById(id);
+        if (checkbox && checkbox.checked) {
+          checkedCount++;
+          checkbox.closest('label').classList.add('bg-wakatake/20');
+        } else if (checkbox) {
+          checkbox.closest('label').classList.remove('bg-wakatake/20');
+        }
+      });
+
+      document.getElementById('checklist-progress-text').textContent = `${checkedCount}/${items.length}`;
+      const percentage = (checkedCount / items.length) * 100;
+      document.getElementById('checklist-progress-bar').style.width = `${percentage}%`;
+    }
+
+    // 頁面載入時讀取清單儲存狀態
+    window.addEventListener('DOMContentLoaded', () => {
+      const items = ['chk1', 'chk2', 'chk3', 'chk4', 'chk5', 'chk6', 'chk7', 'chk8'];
+      items.forEach(id => {
+        const saved = localStorage.getItem(`japan_trip_${id}`);
+        if (saved === 'true') {
+          const checkbox = document.getElementById(id);
+          if (checkbox) checkbox.checked = true;
+        }
+      });
+      updateChecklistProgress();
+    });
+  </script>
+</body>
+</html>
